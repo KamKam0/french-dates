@@ -1,0 +1,22 @@
+{
+  "name": "french-dates",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"erreur: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KamKam0/french-dates.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KamKam0/french-dates/issues"
+  },
+  "homepage": "https://github.com/KamKam0/french-dates#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
