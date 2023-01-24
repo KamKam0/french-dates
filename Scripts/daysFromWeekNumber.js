@@ -28,7 +28,7 @@ module.exports = (week, year) => {
         let day = date.split(" ")[1]
         let month = convertermonths[date.split(" ")[2]]
         let year = date.split(" ")[3]
-        return [`${day}/${month}/${year}`, date.split(" ")[0].slice(0, -1)]
+        return [`${day}/${month}/${year}`, require("./dayNameFromDate")(`${day}/${month}/${year}`).jour]
     }
     let baseday = 1000 * 60 * 60 * 24
     let baseweek = baseday * 7 * (week -1)

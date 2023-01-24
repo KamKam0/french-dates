@@ -15,6 +15,8 @@ module.exports.zoneDisponiblesPourFeries = [
 ]
 module.exports.zoneDisponiblesPourVacances = [ "A", "B", "C" ]
 module.exports.feries = require("./Scripts/feries")
+module.exports.vacances = require("./Scripts/vacances")
 module.exports.numeroSemaine = require("./Scripts/weekNumber")
 module.exports.validationDate = require("./Scripts/validateDate")
 module.exports.joursDeSemaine = require("./Scripts/daysFromWeekNumber")
+module.exports.nomDuJour = require("./Scripts/dayNameFromDate")

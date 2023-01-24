@@ -18,6 +18,6 @@ module.exports = async (year, zone) => {
     response = response.records.map(rec => rec.fields)
 
     response = response.map(field => {return {debut: Date.parse(new Date(field.start_date)), end: Date.parse(new Date(field.end_date))}})
-  
+    
     return {etat: true, response}
 }

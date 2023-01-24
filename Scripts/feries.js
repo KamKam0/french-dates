@@ -5,7 +5,7 @@
 module.exports = async (region) => {
     const fetch = require("node-fetch")
   
-    let validation = require("../index").availableZones.find(e => e === String(region).toLowerCase())
+    let validation = require("../index").zoneDisponiblesPourFeries.find(e => e === String(region).toLowerCase())
   
     if(!validation) return {etat: false, erreur: "Region invalide"}
 
