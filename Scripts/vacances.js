@@ -6,7 +6,7 @@
  */
 module.exports = async (year, zone) => {
     const fetch = require("node-fetch")
-    if(String(year).length !== 4 || isNaN(year)) return {etat: false, erreur: "Annee invalide"}
+    if(String(year).length !== 4 || isNaN(year) || Number(year) < 1) return {etat: false, erreur: "Annee invalide"}
     year = Number(year)
     zone = String(zone).toLocaleUpperCase()
     if(!(/(A|B|C)/).test(zone))  return {etat: false, erreur: "Zone invalide"}

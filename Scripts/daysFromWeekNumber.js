@@ -20,8 +20,8 @@ const convertermonths = {
  * @returns {object}
  */
 module.exports = (week, year) => {
-    if(typeof week !== "number") return {etat: false, erreur: "Le numero de semaine n'est pas un number"}
-    if(typeof year !== "number") return {etat: false, erreur: "Le numero d'annee n'est pas un number"}
+    if(typeof week !== "number"  || Number(week) < 1) return {etat: false, erreur: "Le numero de semaine n'est pas un number"}
+    if(typeof year !== "number" || Number(year) < 1) return {etat: false, erreur: "Le numero d'annee n'est pas un number"}
     if(String(year).length !== 4 || isNaN(year)) return {etat: false, erreur: "Annee invalide"}
     const transform = (date) => {
         if(typeof date === "number") date = new Date(date).toUTCString()
