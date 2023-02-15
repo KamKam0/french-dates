@@ -78,7 +78,7 @@ let name = Dates.feries("metropole")
 
 Vacances
 ```js
-let name = Dates.vacances("2022", "C")//B ou A
+let name = Dates.vacances(2022, "C", "Paris", "Commun") //Le type de personne est optionnel
 /*Sortie: 
 {
     etat: true,
@@ -99,4 +99,25 @@ Validation d'une date
 ```js
 let name = Dates.validationDate("09/09/2022")//B ou A
 //Sortie: { etat: true }
+```
+
+### Informations données disponibles
+Informations concernant les zones disponibles pour les jours fériés
+```js
+const Dates = require("@kamkam1_0/french-dates")
+let zones = Dates.zonesDisponiblesFeries
+```
+
+Informations concernant les vacances
+```js
+const Dates = require("@kamkam1_0/french-dates")
+
+//Obtenir les zones
+let zones = Dates.disponibleVacances.zones
+
+//Obtenir les regions (académies)
+let regions = Dates.disponibleVacances.regions
+
+//Obtenir les personnes (Elèves, professeurs ou les deux)
+let zones = Dates.disponibleVacances.personnes
 ```
