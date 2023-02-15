@@ -25,7 +25,7 @@ module.exports = async (year, zone, region, personne) => {
 
     response = response.records.map(rec => rec.fields)
 
-    response = response.map(field => {return {debut: Date.parse(new Date(field.start_date)), end: Date.parse(new Date(field.end_date))}})
+    response = response.map(field => {return {debut: Date.parse(new Date(field.start_date)), end: Date.parse(new Date(field.end_date)), dateDebut: field.start_date.split("T")[0].split("-").reverse().join("/"), dateFin: field.end_date.split("T")[0].split("-").reverse().join("/"), personne: (field.population === "-" ? "Commun" : decodeURIComponent(field.population)), dureeTexte: require("@kamkam1_0/ms")(Date.parse(new Date(field.end_date)) - Date.parse(new Date(field.start_date))).trim(), duree: Date.parse(new Date(field.end_date)) - Date.parse(new Date(field.start_date))}})
     
     return {etat: true, response}
 }

@@ -59,19 +59,27 @@ let name = Dates.feries("metropole")
 /*Sortie: 
 {
     etat: true,
-    response: {
-        '2023-01-01': '1er janvier',
-        '2023-04-10': 'Lundi de Pâques',
-        '2023-05-01': '1er mai',
-        '2023-05-08': '8 mai',
-        '2023-05-18': 'Ascension',
-        '2023-05-29': 'Lundi de Pentecôte',
-        '2023-07-14': '14 juillet',
-        '2023-08-15': 'Assomption',
-        '2023-11-01': 'Toussaint',
-        '2023-11-11': '11 novembre',
-        '2023-12-25': 'Jour de Noël'
-    }
+    response: [
+        { nom: '1er janvier', date: '2023-01-01', timestamp: 1672534800000 },
+        {
+            nom: 'Lundi de Pâques',
+            date: '2023-04-10',
+            timestamp: 1681084800000
+        },
+        { nom: '1er mai', date: '2023-05-01', timestamp: 1682899200000 },
+        { nom: '8 mai', date: '2023-05-08', timestamp: 1683504000000 },
+        { nom: 'Ascension', date: '2023-05-18', timestamp: 1684368000000 },
+        {
+            nom: 'Lundi de Pentecôte',
+            date: '2023-05-29',
+            timestamp: 1685318400000
+        },
+        { nom: '14 juillet', date: '2023-07-14', timestamp: 1689292800000 },
+        { nom: 'Assomption', date: '2023-08-15', timestamp: 1692057600000 },
+        { nom: 'Toussaint', date: '2023-11-01', timestamp: 1698800400000 },
+        { nom: '11 novembre', date: '2023-11-11', timestamp: 1699664400000 },
+        { nom: 'Jour de Noël', date: '2023-12-25', timestamp: 1703466000000 }
+    ]
 }
 */
 ```
@@ -83,13 +91,69 @@ let name = Dates.vacances(2022, "C", "Paris", "Commun") //Le type de personne es
 {
     etat: true,
     response: [
-        { debut: 1697839200000, end: 1699225200000 },
-        { debut: 1703286000000, end: 1704668400000 },
-        { debut: 1707519600000, end: 1708902000000 },
-        { debut: 1720216800000, end: 1724968800000 },
-        { debut: 1720216800000, end: 1725228000000 },
-        { debut: 1712354400000, end: 1713736800000 },
-        { debut: 1715292000000, end: 1715378400000 }
+        {
+            debut: 1671231600000,
+            end: 1672700400000,
+            dateDebut: '16/12/2022',
+            dateFin: '02/01/2023',
+            personne: 'Commun',
+            dureeTexte: '17 days',
+            duree: 1468800000
+        },
+        {
+            debut: 1676674800000,
+            end: 1678057200000,
+            dateDebut: '17/02/2023',
+            dateFin: '05/03/2023',
+            personne: 'Commun',
+            dureeTexte: '16 days',
+            duree: 1382400000
+        },
+        {
+            debut: 1666389600000,
+            end: 1667775600000,
+            dateDebut: '21/10/2022',
+            dateFin: '06/11/2022',
+            personne: 'Commun',
+            dureeTexte: '16 days and 1 hour',
+            duree: 1386000000
+        },
+        {
+            debut: 1682114400000,
+            end: 1683583200000,
+            dateDebut: '21/04/2023',
+            dateFin: '08/05/2023',
+            personne: 'Commun',
+            dureeTexte: '17 days',
+            duree: 1468800000
+        },
+        {
+            debut: 1688767200000,
+            end: 1693519200000,
+            dateDebut: '07/07/2023',
+            dateFin: '31/08/2023',
+            personne: 'Enseignants',
+            dureeTexte: '55 days',
+            duree: 4752000000
+        },
+        {
+            debut: 1684360800000,
+            end: 1684706400000,
+            dateDebut: '17/05/2023',
+            dateFin: '21/05/2023',
+            personne: 'Commun',
+            dureeTexte: '4 days',
+            duree: 345600000
+        },
+        {
+            debut: 1688767200000,
+            end: 1693778400000,
+            dateDebut: '07/07/2023',
+            dateFin: '03/09/2023',
+            personne: 'Élèves',
+            dureeTexte: '58 days',
+            duree: 5011200000
+        }
     ]
 }
 }*/
