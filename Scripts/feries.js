@@ -22,5 +22,5 @@ module.exports = async (region) => {
         }
     })
     
-    return {etat: true, response: answer}
+    return {etat: true, reponse: answer}
 }

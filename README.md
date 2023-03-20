@@ -165,11 +165,20 @@ let name = Dates.validationDate("09/09/2022")//B ou A
 //Sortie: { etat: true }
 ```
 
+Obtenir un mois et ses informations
+```js
+const Dates = require("@kamkam1_0/french-dates")
+let zones = Dates.zonesDisponiblesFeries
+```
+
 ### Informations données disponibles
 Informations concernant les zones disponibles pour les jours fériés
 ```js
 const Dates = require("@kamkam1_0/french-dates")
-let zones = Dates.zonesDisponiblesFeries
+let zones = Dates.jourMaximumMois("janvier")
+//OU
+let zones = Dates.jourMaximumMois(1)
+//Sortie: { etat: true, mois: 1, numero: 31, nom: 'Janvier', moisAnglais: "January"}
 ```
 
 Informations concernant les vacances
@@ -184,4 +193,10 @@ let regions = Dates.disponibleVacances.regions
 
 //Obtenir les personnes (Elèves, professeurs ou les deux)
 let zones = Dates.disponibleVacances.personnes
+```
+
+Informations contenant le numéro du dernier jour de chaque mois
+```js
+const Dates = require("@kamkam1_0/french-dates")
+let mois = Dates.joursMois
 ```
