@@ -59,7 +59,7 @@ let name = Dates.feries("metropole")
 /*Sortie: 
 {
     etat: true,
-    response: [
+    reponse: [
         { nom: '1er janvier', date: '2023-01-01', timestamp: 1672534800000 },
         {
             nom: 'Lundi de Pâques',
@@ -90,7 +90,7 @@ let name = Dates.vacances(2022, "C", "Paris", "Commun") //Le type de personne es
 /*Sortie: 
 {
     etat: true,
-    response: [
+    reponse: [
         {
             debut: 1671231600000,
             end: 1672700400000,
