@@ -30,13 +30,13 @@ let name = Dates.nomDuJour("09/09/2022")
 
 Numero de semaine avec la date
 ```js
-let name = Dates.nomDuJour("09/09/2022")
+let name = Dates.numeroSemaine("09/09/2022")
 //Sortie: { nombre: 36, annee: 2022, etat: true }
 ```
 
 Jours dans la semaine avec le numero de semaine et l'annee
 ```js
-let name = Dates.nomDuJour(36, 2022)
+let name = Dates.joursDeSemaine(36, 2022)
 /*Sortie: 
 {
     etat: true,
