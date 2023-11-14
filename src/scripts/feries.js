@@ -10,9 +10,15 @@ module.exports = async (region) => {
   
     if(!validation) return {etat: false, erreur: "Region invalide"}
 
-    let link = `https://calendrier.api.gouv.fr/jours-feries/${validation}/${new Date(Date.now()).getFullYear()}.json`
-    let research = await fetch(link, { headers: { "content_type": "application/json" } })
-    let response = await research.json()
+    let response;
+    try {
+        let link = `https://calendrier.api.gouv.fr/jours-feries/${validation}/${new Date(Date.now()).getFullYear()}.json`
+        let research = await fetch(link, { headers: { "content_type": "application/json" } })
+        response = await research.json()
+    } catch(err) {
+        return { etat: false, erreur: "Erreur pour obtenir les données" }
+    }
+
     response = Object.entries(response)
     
     let answer = response.map(ferie => {

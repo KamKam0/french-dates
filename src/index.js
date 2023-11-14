@@ -1,11 +1,6 @@
 const config = require("./config.json")
 
 exports.zonesDisponiblesFeries = config.zonesDisponiblesFeries
-exports.disponibleVacances = {
-    zones: config.disponibleVacances.zones,
-    regions: config.disponibleVacances.regions,
-    personnes: config.disponibleVacances.personnes
-}
 exports.feries = require("./scripts/feries")
 exports.vacances = require("./scripts/vacances")
 exports.numeroSemaine = require("./scripts/weeknumber")
