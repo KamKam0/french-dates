@@ -76,6 +76,8 @@ module.exports = async (zone) => {
                 let duree = dateFin - dateDebut
                 let dureeTexte = ms(dateFin - dateDebut).trim()
                 lastHolidays.dates.push({ debut, dateDebut, fin, dateFin, dureeTexte, duree, zones: [] })
+            } else if (lastHolidays.name?.includes('Rentrée')) {
+                lastHolidays.dates.push({ end: debut, dateFin: dateDebut, zones: [] })
             } else {
                 lastHolidays.dates.push({ debut, dateDebut, zones: [] })
             }
