@@ -68,13 +68,13 @@ module.exports = async (zone) => {
 
             let datesData = getDatesData(rightDate, splittedRightDate)
             
-            let debut = new Date(`${datesData.yearBegin}-${datesData.monthBegin}-${datesData.dayBegin}T02:00:00.000Z`)
-            let dateDebut = Date.parse(debut)
+            let dateDebut = new Date(`${datesData.yearBegin}-${datesData.monthBegin}-${datesData.dayBegin}T02:00:00.000Z`)
+            let debut = Date.parse(dateDebut)
             if (datesData.dayEnd) {
-                let fin = new Date(`${datesData.yearEnd}-${datesData.monthEnd}-${datesData.dayEnd}T02:00:00.000Z`)
-                let dateFin = Date.parse(fin)
-                let duree = dateFin - dateDebut
-                let dureeTexte = ms(dateFin - dateDebut).trim()
+                let dateFin = new Date(`${datesData.yearEnd}-${datesData.monthEnd}-${datesData.dayEnd}T02:00:00.000Z`)
+                let fin = Date.parse(dateFin)
+                let duree = fin - debut
+                let dureeTexte = ms(duree).trim()
                 lastHolidays.dates.push({ debut, dateDebut, fin, dateFin, dureeTexte, duree, zones: [] })
             } else if (lastHolidays.name?.includes('Rentrée')) {
                 lastHolidays.dates.push({ end: debut, dateFin: dateDebut, zones: [] })
