@@ -8,7 +8,7 @@ let index = require("../index")
  * @param {string} zone 
  * @returns {object[]}
  */
-module.exports = async (zone) => {
+module.exports = async (zone=null) => {
     if (zone) {
         zone = String(zone).toLocaleUpperCase()
         if (!['a', 'b', 'c', 'corse'].includes(zone.toLowerCase())) {
@@ -25,16 +25,24 @@ module.exports = async (zone) => {
         return { etat: false, erreur: "Erreur pour obtenir les données" }
     }
     
-    let dataToHandle = data
-    .split('Voir la version texte')[2]
-    .split('<table class')[1]
-    .split('</table>')[0]
-    .split('<p>')
+    let rawDataToHandle = data
+    .split('div class="fr-my-6w fr-')[1]
+    .split('rowspan="1"')
+
+    let firstVersionDataToHandle = rawDataToHandle
+    .splice(rawDataToHandle.findIndex(rawText => rawText.includes('class="fr-sr-only')) + 1, rawDataToHandle.length -1)
+
+    let secondVersionDataToHandle = firstVersionDataToHandle
+    .splice(0, firstVersionDataToHandle.findIndex(rawText => rawText.includes('class="fr-sr-only')) +1)
+
+    let dataToHandle = secondVersionDataToHandle
     .filter(rawData => rawData.includes('</p>'))
     .map(rawData => {
-        return rawData.split('</p>')[0]
+        return rawData
+        .split('</p>')[0]
+        .split('<p>')[1]
     })
-    
+
     let zones = dataToHandle
     .slice(0, 4)
     .map(zone => {
@@ -56,7 +64,7 @@ module.exports = async (zone) => {
     let lastHolidays = {}
 
     dataToHandleWithoutZones.forEach(rawData => {
-        if (yearsToAnalyse.find(yearToAnalyse => rawData.includes(yearToAnalyse))) {
+        if (yearsToAnalyse.find(year => rawData.includes(year))) {
             let rightDate = rawData.split('<sup></sup>')
             if (rightDate.length === 1) {
                 rightDate = rightDate[0]
