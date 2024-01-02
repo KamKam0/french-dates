@@ -26,11 +26,11 @@ module.exports = (date) => {
     if(month !== "02") {
         if(Number(table.find(e => e.mois === Number(month)).numero) < Number(day)) return {etat: false, erreur: "Le mois associe au jour est incorrect"}
     }else{
-        let dates = ["2024", "2028", "2032", "2036", "2040"]
-        let nu
-        if(dates.find(e => e === year)) nu = 29
-        else nu = 28
-        if(Number(nu) < Number(day)) return {etat: false, erreur: "Le mois associe au jour est incorrect"}
+        let numberOfDays = 28
+        if (!(Number(year) % 4)) {
+            numberOfDays = 29
+        }
+        if(Number(numberOfDays) < Number(day)) return {etat: false, erreur: "Le mois associe au jour est incorrect"}
     }
     let convertermonths = {}
     table.forEach(moisFinded => {
