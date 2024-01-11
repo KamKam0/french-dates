@@ -13,7 +13,7 @@ const convertermonths = {
     "Dec": "12",
 }
 const utils = require("../utils/function")
-const dayNameFromDate = require("./dayNameFromDate")
+const dayNameFromDate = require("./daynamefromdate")
 
 /**
  * 
