@@ -181,20 +181,6 @@ let zones = Dates.jourMaximumMois(1)
 //Sortie: { etat: true, mois: 1, numero: 31, nom: 'Janvier', moisAnglais: "January"}
 ```
 
-Informations concernant les vacances
-```js
-const Dates = require("@kamkam1_0/french-dates")
-
-//Obtenir les zones
-let zones = Dates.disponibleVacances.zones
-
-//Obtenir les regions (académies)
-let regions = Dates.disponibleVacances.regions
-
-//Obtenir les personnes (Elèves, professeurs ou les deux)
-let zones = Dates.disponibleVacances.personnes
-```
-
 Informations contenant le numéro du dernier jour de chaque mois
 ```js
 const Dates = require("@kamkam1_0/french-dates")
