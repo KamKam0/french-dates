@@ -1,6 +1,6 @@
 {
   "name": "@kamkam1_0/french-dates",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "",
   "main": "./src/index.js",
   "keywords": ["dates", "france", "french", "feries", "vacances", "holidays", "validate"],

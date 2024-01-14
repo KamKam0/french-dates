@@ -55,9 +55,9 @@ module.exports = async (zone=null) => {
     let dataToHandleWithoutZones = dataToHandle.slice(4)
     let referenceYear = new Date(Date.now()).getFullYear()
     const yearsToAnalyse = [
+        referenceYear-1,
         referenceYear,
         referenceYear+1,
-        referenceYear+2,
     ]
 
     let definitiveData = []
